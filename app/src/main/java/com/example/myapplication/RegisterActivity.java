@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
+import android.widget.TextView;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -22,6 +23,12 @@ public class RegisterActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        String username = getIntent().getStringExtra("username");
+        TextView profileNameTextView = findViewById(R.id.textView4);
+        if (profileNameTextView != null && username != null && !username.isEmpty()) {
+            profileNameTextView.setText(username);
+        }
 
         ImageView gearImageView = findViewById(R.id.imageView4);
         if (gearImageView != null) {
